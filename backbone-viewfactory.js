@@ -1,5 +1,5 @@
 /**
- * ViewFactory - A class to manage creation, destruction, and persistence of
+ * ViewManager - A class to manage creation, destruction, and persistence of
  * views in single page applicaitons.
  *
  * Dependencies:
@@ -26,17 +26,17 @@
  *
  */
 
-App.ViewFactory = function (options) {
+App.ViewManager = function (options) {
     this.initialize(options);
 };
-App.ViewFactory.prototype = {
+App.ViewManager.prototype = {
     options: {
         selector: '.content'
     },
     initialize: function (options) {
         this.views = [];
         this.viewMap = {};
-        this.options = _.clone(App.ViewFactory.prototype.options);
+        this.options = _.clone(App.ViewManager.prototype.options);
         this.options = _.extend(this.options, options);
     },
     closeView: function (view) {
